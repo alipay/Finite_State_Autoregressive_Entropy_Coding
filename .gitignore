@@ -1,0 +1,37 @@
+# editor cache
+/.vscode
+/.theia
+
+# build cache
+/build
+*.egg-info/
+*.pyc
+*.pyi
+*.so
+
+# experiment data
+/experiments
+/pretrained
+/results
+/tmp
+
+# datasets
+/data
+
+# playground
+playground/*
+
+# config ignores
+## environment
+/configs/env_config.py
+## playground
+/configs/playground*
+
+
+# other
+*.jpg
+*.png
+*.pdf
+*.csv
+.DS_Store
+export.zip

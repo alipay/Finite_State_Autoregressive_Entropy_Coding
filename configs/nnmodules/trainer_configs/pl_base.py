@@ -1,0 +1,3 @@
+config = dict(
+    deterministic=True,
+)

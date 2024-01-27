@@ -1,0 +1,21 @@
+numpy
+scipy
+pybind11
+pybind11_stubgen==0.16.2
+setuptools
+cython
+torch==1.7.1
+torchvision==0.8.2
+pytorch-lightning==1.5.10
+tqdm
+pandas
+zstandard
+brotlipy
+networkx==2.6.3
+entmax==1.1
+adabelief-pytorch==0.2.0
+compressai==1.2.3
+scikit-image
+oss2
+# craystack dep
+autograd
