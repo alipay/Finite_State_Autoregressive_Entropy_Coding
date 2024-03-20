@@ -2,7 +2,7 @@
 
 This is the official Pytorch implementation of our ICLR paper:
 
-[Finite-State Autoregressive Entropy Coding for Efficient Learned Lossless Compression](https://openreview.net/forum?id=D5mJSNtUtv&referrer=%5BAuthor%20Console%5D(%2Fgroup%3Fid%3DICLR.cc%2F2024%2FConference%2FAuthors%23your-submissions))
+[Finite-State Autoregressive Entropy Coding for Efficient Learned Lossless Compression](https://openreview.net/forum?id=D5mJSNtUtv)
 
 ## Setup
 
@@ -100,7 +100,17 @@ python tools/run_benchmark.py [model_directory]
 ```
 
 ## Citation
-TBA
+```bibtex
+@inproceedings{
+zhang2024finitestate,
+title={Finite-State Autoregressive Entropy Coding for Efficient Learned Lossless Compression},
+author={Yufeng Zhang and Hang Yu and Jianguo Li and Weiyao Lin},
+booktitle={The Twelfth International Conference on Learning Representations},
+year={2024},
+url={https://openreview.net/forum?id=D5mJSNtUtv}
+}
+
+```
 
 ## Contact
 TBA
