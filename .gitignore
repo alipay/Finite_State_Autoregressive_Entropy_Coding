@@ -29,8 +29,8 @@ playground/*
 
 
 # other
-*.jpg
-*.png
+# *.jpg
+# *.png
 *.pdf
 *.csv
 .DS_Store

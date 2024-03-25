@@ -4,11 +4,17 @@ This is the official Pytorch implementation of our ICLR paper:
 
 [Finite-State Autoregressive Entropy Coding for Efficient Learned Lossless Compression](https://openreview.net/forum?id=D5mJSNtUtv)
 
+<img src="imgs/main.png" width="800"> 
+
+Finite-State Autoregressive Entropy Coding is a VAE-based compression method designed for better compression ratio and computational efficiency. 
+It extends Asymmetric Numeral Systems (ANS) with a lookup-table-based autoregressive model, which efficiently performs autoregressive encoding/decoding that improves compression ratio, even without parallel computation.
+Besides, the Straight-Through Hardmax Quantization (STHQ) is proposed to enhance the optimization of discrete latent space in VAE.
+
 ## Setup
 
 ### Hardware Requirements
 * CUDA compatible GPU (Optional but highly recommended for training. For testing, no GPU is OK)
-* Memory >= 32G (Optional but required for training on ImageNet64. We force full dataset caching for ImageNet64, which requires ~12G memory per dataset instance.)
+* Memory > 16G * GPUNum (Optional but required for training on ImageNet64. We force full dataset caching for ImageNet64, which requires ~12G memory per dataset instance.)
 
 
 ### Software Requirements
@@ -19,12 +25,12 @@ This is the official Pytorch implementation of our ICLR paper:
 * cudatoolkit>=10.2 (Optional but highly recommended, lower versions may be functional)
 * [craystack](https://github.com/j-towns/craystack) (Optional, if you want to compare with BB-ANS)
 
-The recommended enrironment setup script with conda: 
+The recommended environment setup script with conda: 
 ```bash
 conda create -n cbench python=3.7
 conda activate cbench
 conda install -c pytorch pytorch==1.7.1 torchvision==0.8.2 cudatoolkit=10.2
-# conda install -c pytorch pytorch==1.12.1 torchvision==0.13.1 # cudatoolkit=11.3
+# conda install -c pytorch pytorch==1.12.1 torchvision==0.13.1 cudatoolkit=11.3
 # if gcc version < 7
 conda install -c conda-forge gcc gxx
 pip install -r requirements.txt
@@ -44,7 +50,7 @@ python setup.py build develop
 ## Dataset Prepare
 We use 5 datasets in our experiments:
 * CIFAR10 : No need for preparation, torchvision would automatically download for you.
-* [ImageNet32/64](https://clic.compression.cc/) : Download downsampled images 32x32 and 64x64 and decompress them into data/ImageNet. The result folders would be:
+* [ImageNet32/64](https://image-net.org/download.php) : Download downsampled images 32x32 and 64x64 and decompress them into data/ImageNet. The result folders would be:
   * data/ImageNet/Imagenet32_train_npz
   * data/ImageNet/Imagenet32_val_npz
   * data/ImageNet/Imagenet64_train_npz
@@ -77,6 +83,9 @@ python tools/run_benchmark.py [config_file]
 ```
 
 You can use tensorboard to visualize the training process.
+```bash
+tensorboard --logdir experiments
+```
 
 ### Experiment List
 NOTE: If an GPU out-of-memory error occured, adjust batch_size_total in each config file. In our experiments, we use 8 A100 for most configs so the batch_size_total might be too large.
