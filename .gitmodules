@@ -1,4 +1,5 @@
 [submodule "3rdparty/craystack"]
 	path = 3rdparty/craystack
 	url = https://github.com/j-towns/craystack.git
-	branch = f1b6851
+[submodule "3rdparty/craystack/"]
+	branch = f1b68511bbcb24dde3bc6b6d374ca62e038fba27

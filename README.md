@@ -42,7 +42,7 @@ See configs/env.py
 
 ### (Optional) 3rdparty setup
 ```bash
-git submodules update --init --recursive
+git submodule update --init --recursive
 cd 3rdparty/craystack
 python setup.py build develop
 ```
